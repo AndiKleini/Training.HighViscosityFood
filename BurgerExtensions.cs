@@ -32,7 +32,5 @@ namespace Training.HighViscosityFood
         {
             return new Burger(ingredients);
         }
-
-
     }
 }

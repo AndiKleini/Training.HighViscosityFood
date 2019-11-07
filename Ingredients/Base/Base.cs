@@ -7,14 +7,14 @@ namespace Training.HighViscosityFood.Ingredients.Base
 {
     internal class Base : IFoodProduct
     {
+        private const int FIXEDCOSTS = 200;
         public int GetCalories()
         {
             return 0;
         }
-
         public int GetPrice()
         {
-            return 200;
+            return FIXEDCOSTS;
         }
     }
 }

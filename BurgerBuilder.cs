@@ -7,7 +7,7 @@ namespace Training.HighViscosityFood
         public Burger GetMyBurger()
         {
             return new Base().
-                AddCheese(Ingredients.Cheese.CheeseType.Bojar).
+                AddCheese(Ingredients.Cheese.CheeseType.Tilsitter).
                 OfWeight(200).
                 AddHam(Ingredients.Ham.HamType.Panchetta).
                 OfWeight(300).
