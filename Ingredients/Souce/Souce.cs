@@ -1,39 +1,59 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Training.HighViscosityFood.Abstract;
 
 namespace Training.HighViscosityFood.Ingredients.Souce
 {
     internal class Souce: IngrediantsBase
     {
+        private SouceType souceType;
         public Souce(
             IFoodProduct decoratedInstance,
             Ingredients.Souce.SouceType souceType) :
             base(decoratedInstance)
         {
-
+            this.souceType = souceType;
         }
         internal override int GetMyOwnCalories()
         {
-            throw new NotImplementedException();
+            return this.GetCaloriesForSouceOfType(this.souceType);
         }
-
         internal override int GetMyOwnPrice()
         {
-            throw new NotImplementedException();
+            return this.GetPriceForSouceType(this.souceType);
         }
-
-        private int GetCaloriesOfHundredGrammForSouceType(
+        private int GetCaloriesForSouceOfType(
             SouceType typeOfSouce)
         {
-            throw new NotImplementedException();
+            int calories = 0;
+            switch (typeOfSouce)
+            {
+                case SouceType.Tartar:
+                    calories = 110;
+                    break;
+                case SouceType.Hollandeise:
+                    calories = 250;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(typeOfSouce));
+            }
+            return calories;
         }
-
-        private int GetPriceForHundredGrammForSouceType(
+        private int GetPriceForSouceType(
             SouceType typeOfSouce)
         {
-            throw new NotImplementedException();
+            int price = 0;
+            switch (typeOfSouce)
+            {
+                case SouceType.Tartar:
+                    price = 200;
+                    break;
+                case SouceType.Hollandeise:
+                    price = 300;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(typeOfSouce));
+            }
+            return price;
         }
     }
 }
