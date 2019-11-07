@@ -10,22 +10,22 @@ namespace Training.HighViscosityFood
     {
         public static MeatPhrase AddMeat(this IFoodProduct instance, MeatType typeOfMeat)
         {
-            throw new System.NotImplementedException();
+            return new MeatPhrase(instance, typeOfMeat);
         }
 
         public static HamPhrase AddHam(this IFoodProduct instance, HamType typeOfHam)
         {
-            throw new System.NotImplementedException();
+            return new HamPhrase(instance, typeOfHam);
         }
 
         public static CheesePhrase AddCheese(this IFoodProduct instance, CheeseType typeOfCheese)
         {
-            throw new System.NotImplementedException();
+            return new CheesePhrase(instance, typeOfCheese);
         }
 
         public static IFoodProduct AddSouce(this IFoodProduct instance, SouceType typeOfSouce)
         {
-            throw new System.NotImplementedException();
+            return new Souce(instance, typeOfSouce);
         }
 
         public static Burger ToBurger(this IFoodProduct ingredients)
