@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Training.HighViscosityFood.Ingredients.Souce
 {
-    internal enum SouceType
+    public enum SouceType
     {
         Undefined = 0,
         CottageCheese = 1,

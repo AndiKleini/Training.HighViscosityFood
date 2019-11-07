@@ -3,18 +3,21 @@ using Training.HighViscosityFood.Abstract;
 
 namespace Training.HighViscosityFood
 {
-    public class Burger : IFoodProduct
+    public class Burger 
     {
-        public int GetPrice()
+        private IFoodProduct underlyingFoodProduct;
+        public Burger(IFoodProduct underlyingFoodProduct)
         {
-            throw new NotImplementedException();
+            this.underlyingFoodProduct = underlyingFoodProduct;
         }
-
-        public int GetCalories()
+        public Bill ToBill()
         {
-            throw new NotImplementedException();
+            return new Bill()
+            {
+                Calories = this.underlyingFoodProduct.GetCalories(),
+                OrderedAt = DateTime.Now,
+                Price = this.underlyingFoodProduct.GetPrice()
+            };
         }
-
-        public DateTime OrderDate { get; set; }
     }
 }

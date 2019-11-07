@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Training.HighViscosityFood.Ingredients.Ham
 {
-    internal enum HamType
+    public enum HamType
     {
         Undefined = 0,
         Panchetta = 1,

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Training.HighViscosityFood.Ingredients.Meat
 {
-    internal enum MeatType
+    public enum MeatType
     {
         Undefined = 0,
         CottageMeat = 1,
