@@ -5,6 +5,7 @@ namespace Training.HighViscosityFood
 {
     public class Burger 
     {
+        private const int WRAPPING_PRICE = 20;
         private IFoodProduct underlyingFoodProduct;
         public bool IsWrapped { get; set; }
         public Burger(IFoodProduct underlyingFoodProduct)
@@ -18,7 +19,7 @@ namespace Training.HighViscosityFood
                 Calories = this.underlyingFoodProduct.GetCalories(),
                 OrderedAt = DateTime.Now,
                 Price = this.underlyingFoodProduct.GetPrice() + 
-                        (this.IsWrapped ? 0 : 20)
+                        (this.IsWrapped ? 0 : WRAPPING_PRICE)
             };
         }
     }
