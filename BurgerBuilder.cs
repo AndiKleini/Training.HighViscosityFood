@@ -9,7 +9,7 @@ namespace Training.HighViscosityFood
             return new Base().
                 AddCheese(Ingredients.Cheese.CheeseType.Tilsitter).
                 OfWeight(200).
-                AddHam(Ingredients.Ham.HamType.Panchetta).
+                AddHam(Ingredients.Ham.HamType.Pancetta).
                 OfWeight(300).
                 ToBurger();
         }

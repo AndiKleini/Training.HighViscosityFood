@@ -7,7 +7,7 @@ namespace Training.HighViscosityFood.Ingredients.Ham
     public enum HamType
     {
         Undefined = 0,
-        Panchetta = 1,
-        GranoPadano = 2
+        Pancetta = 1,
+        BlackForest = 2
     }
 }
