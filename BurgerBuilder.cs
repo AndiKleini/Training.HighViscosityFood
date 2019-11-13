@@ -4,7 +4,7 @@ namespace Training.HighViscosityFood
 {
     public class BurgerBuilder
     {
-        public Burger GetMyBurger()
+        public Burger GetClassicBurger()
         {
             return new Base().
                 AddCheese(Ingredients.Cheese.CheeseType.Tilsitter).
