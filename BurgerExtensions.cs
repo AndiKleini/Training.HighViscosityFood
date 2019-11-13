@@ -12,22 +12,18 @@ namespace Training.HighViscosityFood
         {
             return new MeatPhrase(instance, typeOfMeat);
         }
-
         public static HamPhrase AddHam(this IFoodProduct instance, HamType typeOfHam)
         {
             return new HamPhrase(instance, typeOfHam);
         }
-
         public static CheesePhrase AddCheese(this IFoodProduct instance, CheeseType typeOfCheese)
         {
             return new CheesePhrase(instance, typeOfCheese);
         }
-
         public static IFoodProduct AddSouce(this IFoodProduct instance, SouceType typeOfSouce)
         {
             return new Souce(instance, typeOfSouce);
         }
-
         public static Burger ToBurger(this IFoodProduct ingredients)
         {
             return new Burger(ingredients);
