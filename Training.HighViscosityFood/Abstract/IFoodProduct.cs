@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Training.HighViscosityFood.Abstract
+﻿namespace Training.HighViscosityFood.Abstract
 {
     public interface IFoodProduct
     {

@@ -11,16 +11,15 @@ namespace Training.HighViscosityFood.Abstract
         }
         internal abstract int GetMyOwnCalories();
         internal abstract int GetMyOwnPrice();
-
         public int GetCalories()
         {
             return this.decoratedIngrediant.GetCalories() +
-                   this.GetMyOwnPrice();
+                   this.GetMyOwnCalories();
         }
-
         public int GetPrice()
         {
-            throw new NotImplementedException();
+            return this.decoratedIngrediant.GetPrice() +
+                    this.GetMyOwnPrice();
         }
     }
 }
