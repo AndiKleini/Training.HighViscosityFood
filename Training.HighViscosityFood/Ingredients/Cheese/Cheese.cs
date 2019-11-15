@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Training.HighViscosityFood.Abstract;
 
 namespace Training.HighViscosityFood.Ingredients.Cheese
@@ -20,14 +18,12 @@ namespace Training.HighViscosityFood.Ingredients.Cheese
         }
         internal override int GetMyOwnCalories()
         {
-            return (this.weight * this.GetPriceForHundredGrammForCheeseType(this.cheeseType)) / 100;
+            return (this.weight * this.GetCaloriesOfHundredGrammForCheeseType(this.cheeseType)) / 100;
         }
-
         internal override int GetMyOwnPrice()
         {
             return (this.weight * this.GetPriceForHundredGrammForCheeseType(this.cheeseType)) / 100;
         }
-
         private int GetCaloriesOfHundredGrammForCheeseType(
             CheeseType typeOfCheese)
         {
