@@ -3,27 +3,25 @@ using Training.HighViscosityFood.Abstract;
 
 namespace Training.HighViscosityFood.Ingredients.Meat
 {
-    internal class Meat: IngrediantsBase
+    internal class Meat: WeightedIngrediants
     {
-        private int weight;
         private MeatType meatType;
         public Meat(
             IFoodProduct decoratedInstance,
             int weight,
             Ingredients.Meat.MeatType meatType) :
-            base(decoratedInstance)
+            base(decoratedInstance, weight)
         {
-            this.weight = weight;
             this.meatType = meatType;
         }
         internal override int GetMyOwnCalories()
         {
-            return (this.weight * this.GetCaloriesOfHundredGrammForMeatOfType(this.meatType)) / 100;
+            return base.GetCaloriesForWeight(this.GetCaloriesOfHundredGrammForMeatOfType(this.meatType));
 
         }
         internal override int GetMyOwnPrice()
         {
-            return (this.weight * this.GetPriceForHundredGrammMeatOfType(this.meatType)) / 100;
+            return base.GetPriceForWeight(this.GetPriceForHundredGrammMeatOfType(this.meatType));
 
         }
         private int GetCaloriesOfHundredGrammForMeatOfType(
@@ -50,10 +48,10 @@ namespace Training.HighViscosityFood.Ingredients.Meat
             switch (typeOfMeat)
             {
                 case MeatType.Pork:
-                    price = 78;
+                    price = 130;
                     break;
                 case MeatType.Seafood:
-                    price = 250;
+                    price = 230;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(typeOfMeat));
