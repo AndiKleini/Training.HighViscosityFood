@@ -7,7 +7,7 @@ using Training.HighViscosityFood.Ingredients.Ham;
 namespace Training.HighViscosityFood.Tests.Ingrediants.Ham
 {
     [TestFixture]
-    public class HamTests
+    public class MeatTests
     {
         [Test]
         [TestCase(100, HamType.BlackForest, 195)]

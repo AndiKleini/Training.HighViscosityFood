@@ -3,27 +3,25 @@ using Training.HighViscosityFood.Abstract;
 
 namespace Training.HighViscosityFood.Ingredients.Ham
 {
-    internal class Ham : IngrediantsBase
+    internal class Ham : WeightedIngrediants
     {
         private HamType hamType;
-        private int weight;
         public Ham(
             IFoodProduct decoratedInstance,
             int weight,
             HamType hamType) :
-            base(decoratedInstance)
+            base(decoratedInstance, weight)
         {
             this.hamType = hamType;
-            this.weight = weight;
         }
         internal override int GetMyOwnCalories()
         {
-            return (this.weight * this.GetCaloriesOfHundredGrammForHamType(this.hamType)) / 100;
+            return base.GetCaloriesForWeight(this.GetCaloriesOfHundredGrammForHamType(this.hamType));
 
         }
         internal override int GetMyOwnPrice()
         {
-            return (this.weight * this.GetPriceForHundredGrammHamType(this.hamType)) / 100;
+            return base.GetPriceForWeight(this.GetPriceForHundredGrammHamType(this.hamType));
 
         }
         private int GetCaloriesOfHundredGrammForHamType(

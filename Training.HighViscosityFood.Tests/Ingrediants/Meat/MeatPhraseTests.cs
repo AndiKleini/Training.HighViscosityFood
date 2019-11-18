@@ -2,9 +2,9 @@
 using Moq;
 using NUnit.Framework;
 using Training.HighViscosityFood.Abstract;
-using Training.HighViscosityFood.Ingredients.Ham;
+using Training.HighViscosityFood.Ingredients.Meat;
 
-namespace Training.HighViscosityFood.Tests.Ingrediants.Ham
+namespace Training.HighViscosityFood.Tests.Ingrediants.Meat
 {
     [TestFixture]
     public class MeatPhraseTests
@@ -13,9 +13,9 @@ namespace Training.HighViscosityFood.Tests.Ingrediants.Ham
         public void OfWeight_WeightIsSpecified_ReturnsInstanceOfTypeCheese()
         {
             var foodProductMock = new Mock<IFoodProduct>();
-            new HamPhrase(foodProductMock.Object, HamType.Pancetta).
+            new MeatPhrase(foodProductMock.Object, MeatType.Seafood).
                 OfWeight(100).Should().
-                BeOfType<Ingredients.Ham.Ham>();
+                BeOfType < Ingredients.Meat.Meat>();
         }
     }
 }
