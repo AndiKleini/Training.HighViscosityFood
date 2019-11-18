@@ -3,26 +3,26 @@ using Training.HighViscosityFood.Abstract;
 
 namespace Training.HighViscosityFood.Ingredients.Cheese
 {
-    internal class Cheese : IngrediantsBase
+    internal class Cheese : WeightedIngrediants
     {
-        private int weight;
         private CheeseType cheeseType;
+        private int weight;
         public Cheese(
             IFoodProduct decoratedInstance,
             int weight,
             CheeseType cheeseType) : 
-            base(decoratedInstance)
+            base(decoratedInstance, weight)
         {
             this.cheeseType = cheeseType;
             this.weight = weight;
         }
         internal override int GetMyOwnCalories()
         {
-            return (this.weight * this.GetCaloriesOfHundredGrammForCheeseType(this.cheeseType)) / 100;
+            return base.GetCaloriesForWeight(this.GetCaloriesOfHundredGrammForCheeseType(this.cheeseType));
         }
         internal override int GetMyOwnPrice()
         {
-            return (this.weight * this.GetPriceForHundredGrammForCheeseType(this.cheeseType)) / 100;
+            return base.GetPriceForWeight(this.GetPriceForHundredGrammForCheeseType(this.cheeseType));
         }
         private int GetCaloriesOfHundredGrammForCheeseType(
             CheeseType typeOfCheese)
