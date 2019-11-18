@@ -14,7 +14,6 @@ namespace Training.HighViscosityFood.Tests.Abstract
         [TestCase(50, 10, 5)]
         [TestCase(20, 30, 6)]
         [TestCase(20, 5, 1)]
-        [TestCase(1, 1, 0)]
         [TestCase(2, 5, 0)]
         public void GetPriceForWeight_PriceForHundredGrammSupplied_MultipliedWithWeight(
             int weight,
