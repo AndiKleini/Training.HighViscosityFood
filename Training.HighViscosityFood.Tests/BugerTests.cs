@@ -3,7 +3,6 @@ using Moq;
 using FluentAssertions;
 using System;
 using Training.HighViscosityFood.Abstract;
-using System.Globalization;
 
 namespace Training.HighViscosityFood.Tests
 {
