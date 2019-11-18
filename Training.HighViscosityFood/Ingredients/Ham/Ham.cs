@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Training.HighViscosityFood.Abstract;
 
 namespace Training.HighViscosityFood.Ingredients.Ham
