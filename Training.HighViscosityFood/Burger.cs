@@ -8,18 +8,27 @@ namespace Training.HighViscosityFood
         private const int WRAPPING_PRICE = 20;
         private IFoodProduct underlyingFoodProduct;
         public bool IsWrapped { get; set; }
+        private Func<DateTime> getTimeStamp = () => DateTime.Now;
         public Burger(IFoodProduct underlyingFoodProduct)
         {
             this.underlyingFoodProduct = underlyingFoodProduct;
+        }
+        public Burger(IFoodProduct underlyingFoodProduct, Func<DateTime> getTimeStamp = null) :
+            this(underlyingFoodProduct)
+        {
+            if (getTimeStamp != null)
+            {
+                this.getTimeStamp = getTimeStamp;
+            }
         }
         public Bill ToBill()
         {
             return new Bill()
             {
                 Calories = this.underlyingFoodProduct.GetCalories(),
-                OrderedAt = DateTime.Now,
+                OrderedAt = this.getTimeStamp(),
                 Price = this.underlyingFoodProduct.GetPrice() + 
-                        (this.IsWrapped ? 0 : WRAPPING_PRICE)
+                        (this.IsWrapped ? WRAPPING_PRICE : 0)
             };
         }
     }
