@@ -3,6 +3,7 @@ using Moq;
 using FluentAssertions;
 using System;
 using Training.HighViscosityFood.Abstract;
+using System.Globalization;
 
 namespace Training.HighViscosityFood.Tests
 {
@@ -14,7 +15,7 @@ namespace Training.HighViscosityFood.Tests
         {
             int calories = 250;
             int price = 12;
-            var orderTimeStamp = DateTime.Parse("11/13/2019 7:51:44 AM");
+            var orderTimeStamp = DateTime.Parse("2009-06-01T13:45:30");
             var expectedBill = new Bill()
             {
                 Price = price,
