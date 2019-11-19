@@ -11,6 +11,20 @@ Like in any other software project, a small backgroundstory of involved develope
 
 Once upon a time Clare, who is a very experienced software developer, was hired to create a system for some food corner. The business was young and the budget was low. Consequently Clare developed some basic features into the system to enable the business and make selling food possible. This initial, basic version can be checked out on master branch. Customers were lucky and started their business.
 
+```C#
+public Burger GetClassicBurger()
+        {
+            return new Base().
+                AddCheese(Ingredients.Cheese.CheeseType.Tilsitter).
+                OfWeight(200).
+                AddHam(Ingredients.Ham.HamType.Pancetta).
+                OfWeight(300).
+                AddSouce(Ingredients.Souce.SouceType.Hollandeise).
+                AddOther(200, 0, "Wrapping").
+                ToBurger();
+        }
+```
+
 By designing the solution, Clare had in mind the next feature of generating a printed out bill. This leads to application of decorator pattern and abstraction to FoodIngrediantsBase (IFoodProduct). But Clare had no chance, to talk to anyone else about it.
 
 ### Eddies changes 
