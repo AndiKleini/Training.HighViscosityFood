@@ -24,7 +24,7 @@ You can go through Eddies changes in branch SellOptionalWrapping_ByEddy. These a
 
 ### Clare returns from holiday
 
-When Clare returns from her holidays, she checked out Eddies branch and was very unlucky about the design breaking changes. She knows that Eddy is a great developer and tries to understand how this could happen. After some review on her design, she came to the conclusion that viscosity in her design was too high. It was much more easier to do the wrong than the right thing. Adding this simple feature was not supported by existing design. 
+When Clare returns from her holidays, she checked out Eddies branch and was very unlucky about the design breaking changes. She knows that Eddy is a great developer and tries to understand how this could happen. After some review on her design, she came to the conclusion that viscosity in her design was too high. It was much more easier hacking around, than following the design. Adding this simple wrapping feature was not supported by existing design. 
 
 
 
