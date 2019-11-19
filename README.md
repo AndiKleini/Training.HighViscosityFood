@@ -104,6 +104,40 @@ Unfortunetly Clare was on holiday and her workmate Eddy was asked to develop the
 
 You can go through Eddies concise and intuitive changes in branch SellOptionalWrapping_ByEddy.
 
+Eddy extended burger class by proper IsWrapped boolean property:
+
+```C#
+    public class Burger 
+    {
+        private const int WRAPPING_PRICE = 20;
+        private IFoodProduct underlyingFoodProduct;
+        public bool IsWrapped { get; set; }
+        private Func<DateTime> getTimeStamp = () => DateTime.Now;
+        public Burger(IFoodProduct underlyingFoodProduct)
+        {
+            this.underlyingFoodProduct = underlyingFoodProduct;
+        }
+        public Burger(IFoodProduct underlyingFoodProduct, Func<DateTime> getTimeStamp = null) :
+            this(underlyingFoodProduct)
+        {
+            if (getTimeStamp != null)
+            {
+                this.getTimeStamp = getTimeStamp;
+            }
+        }
+        public Bill ToBill()
+        {
+            return new Bill()
+            {
+                Calories = this.underlyingFoodProduct.GetCalories(),
+                OrderedAt = this.getTimeStamp(),
+                Price = this.underlyingFoodProduct.GetPrice() + 
+                        (this.IsWrapped ? WRAPPING_PRICE : 0)
+            };
+        }
+    }
+```
+
 ### Clare returns from holiday
 
 When Clare returns from her holidays, she checked out Eddies branch and was very unlucky about the design breaking changes. She knows that Eddy is a great developer and tries to understand how this could happen. After some review on her design, she came to the conclusion that viscosity in her design was too high. It was much more easier hacking around, than following the design. Adding this simple wrapping feature was not supported by existing design. 
