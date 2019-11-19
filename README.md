@@ -30,6 +30,10 @@ Clare has to change it. Otherwise she would not support the bill printing featur
 
 One can review Clares changes on branch SellOptionalWrapping_ByClare.
 
+## Tips for training
+
+
+
 
 
 
