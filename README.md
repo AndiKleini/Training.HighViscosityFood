@@ -28,6 +28,8 @@ When Clare returns from her holidays, she checked out Eddies branch and was very
 
 Clare has to change it. Otherwise she would not support the bill printing feature. Clare found an easy way to add abitrary (untyped) food products to her system. Therfore she created the class Other, deriving from IngrediantsBase. This class represents a fully paramterizable FoodProduct that can be easily used for adding any kind of ingrediant.
 
+One can review Clares changes on branch SellOptionalWrapping_ByClare.
+
 
 
 
