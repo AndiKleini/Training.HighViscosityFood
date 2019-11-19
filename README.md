@@ -60,6 +60,34 @@ Code below shows you, how a burger can be wrapped and the price is increased by 
 ```
 For adding abitrary stuff to a food product, the general ingrediant type Other was introduced (the name ingrediant is somehow misleading now ...). As beeing a decorator it fits perfectly to the existing design and will also support upcoming bill feature.
 
+```C#
+    internal class Other : IngrediantsBase
+    {
+        private int price;
+        private int calories;
+        private string name;
+        public Other(
+            IFoodProduct decoratedInstance,
+            int price,
+            int calories,
+            string name) :
+            base(decoratedInstance)
+        {
+            this.price = price;
+            this.calories = calories;
+            this.name = name;
+        }
+        internal override int GetMyOwnCalories()
+        {
+            return this.calories;
+        }
+        internal override int GetMyOwnPrice()
+        {
+            return this.price;
+        }
+    }
+```
+
 ## Tips for training
 
 After a short introduction about viscosity and aspects of agile architecture, the trainer can introduce the example by going quickly through the master branch. Next, developers can step into role of Eddy and create the wrapping feature. After 10 - 15 minutes each solution is presented. It is up to the teacher now to moderate and extract as much value as possible.
