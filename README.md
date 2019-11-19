@@ -32,7 +32,7 @@ One can review Clares changes on branch SellOptionalWrapping_ByClare.
 
 ## Tips for training
 
-After a short introduction about viscosity and aspects of agile architecture, the trainer can introduce the example by going quickly through the master branch. Next, developers can step into role of Eddy and create the wrapping feature. After 10 - 15 minutes each solution is presented.
+After a short introduction about viscosity and aspects of agile architecture, the trainer can introduce the example by going quickly through the master branch. Next, developers can step into role of Eddy and create the wrapping feature. After 10 - 15 minutes each solution is presented. It is up to the teacher now to moderate and extract as much value as possible.
 
 
 
