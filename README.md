@@ -26,7 +26,7 @@ You can go through Eddies changes in branch SellOptionalWrapping_ByEddy. These a
 
 When Clare returns from her holidays, she checked out Eddies branch and was very unlucky about the design breaking changes. She knows that Eddy is a great developer and tries to understand how this could happen. After some review on her design, she came to the conclusion that viscosity in her design was too high. It was much more easier hacking around, than following the design. Adding this simple wrapping feature was not supported by existing design. 
 
-Clare has to change it. Otherwise she would not support the bill printing feature. Clare found an easy way to add abitrary (untyped) food products to her system. Therfore she created the class Other, deriving from IngrediantsBase. This class represents a fully paramterizable FoodProduct.
+Clare has to change it. Otherwise she would not support the bill printing feature. Clare found an easy way to add abitrary (untyped) food products to her system. Therfore she created the class Other, deriving from IngrediantsBase. This class represents a fully paramterizable FoodProduct that can be easily used for adding any kind of ingrediant.
 
 
 
