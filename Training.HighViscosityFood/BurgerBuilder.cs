@@ -12,6 +12,7 @@ namespace Training.HighViscosityFood
                 AddHam(Ingredients.Ham.HamType.Pancetta).
                 OfWeight(300).
                 AddSouce(Ingredients.Souce.SouceType.Hollandeise).
+                AddOther(200, 0, "Wrapping").
                 ToBurger();
         }
     }

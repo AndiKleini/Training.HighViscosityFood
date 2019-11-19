@@ -5,6 +5,7 @@ using Training.HighViscosityFood.Ingredients.Base;
 using Training.HighViscosityFood.Ingredients.Meat;
 using Training.HighViscosityFood.Ingredients.Cheese;
 using Training.HighViscosityFood.Ingredients.Ham;
+using Training.HighViscosityFood.Ingredients.Other;
 
 namespace Training.HighViscosityFood.Tests
 {
@@ -42,6 +43,14 @@ namespace Training.HighViscosityFood.Tests
                 AddHam(HamType.BlackForest).
                 Should().
                 BeOfType<HamPhrase>();
+        }
+        [Test]
+        public void AddOther_ToFoodProduct_EmitOther()
+        {
+            this.CreateBaseFoodProduct().
+                AddOther(10, 200, "some other product").
+                Should().
+                BeOfType<Other>();
         }
         private Base CreateBaseFoodProduct()
         {
