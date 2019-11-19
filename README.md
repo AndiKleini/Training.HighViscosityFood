@@ -138,6 +138,26 @@ Eddy extended burger class by proper IsWrapped boolean property:
     }
 ```
 
+In case of wrapping a food product a boolean flag is set:
+
+```C#
+        public Burger GetMyBurger(bool isWrapped = false)
+        {
+            var tmpBurger = new Base().
+                AddCheese(Ingredients.Cheese.CheeseType.Tilsitter).
+                OfWeight(200).
+                AddHam(Ingredients.Ham.HamType.Pancetta).
+                OfWeight(300).
+                AddSouce(Ingredients.Souce.SouceType.Hollandeise).
+                ToBurger();
+            if (isWrapped) 
+            {
+                tmpBurger.IsWrapped = true;
+            }
+            return tmpBurger;
+        }
+```
+
 ### Clare returns from holiday
 
 When Clare returns from her holidays, she checked out Eddies branch and was very unlucky about the design breaking changes. She knows that Eddy is a great developer and tries to understand how this could happen. After some review on her design, she came to the conclusion that viscosity in her design was too high. It was much more easier hacking around, than following the design. Adding this simple wrapping feature was not supported by existing design. 
