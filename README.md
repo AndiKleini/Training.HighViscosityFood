@@ -12,7 +12,7 @@ Like in any other software project, a small backgroundstory of involved develope
 Once upon a time Clare, who is a very experienced software developer, was hired to create a system for some food corner. The business was young and the budget was low. Consequently Clare developed some basic features into the system to enable the business and make selling food possible. This initial, basic version can be checked out on master branch. Customers were lucky and started their business.
 
 ```C#
-public Burger GetClassicBurger()
+        public Burger GetClassicBurger()
         {
             return new Base().
                 AddCheese(Ingredients.Cheese.CheeseType.Tilsitter).
@@ -20,7 +20,6 @@ public Burger GetClassicBurger()
                 AddHam(Ingredients.Ham.HamType.Pancetta).
                 OfWeight(300).
                 AddSouce(Ingredients.Souce.SouceType.Hollandeise).
-                AddOther(200, 0, "Wrapping").
                 ToBurger();
         }
 ```
@@ -43,6 +42,22 @@ When Clare returns from her holidays, she checked out Eddies branch and was very
 Clare has to change it. Otherwise she would not support the bill printing feature. Clare found an easy way to add abitrary (untyped) food products to her system. Therfore she created the class Other, deriving from IngrediantsBase. This class represents a fully paramterizable FoodProduct that can be easily used for adding any kind of ingrediant.
 
 One can review Clares changes on branch SellOptionalWrapping_ByClare.
+
+Code below shows you, how a burger can be wrapped and the price is increased by 200.
+
+```C#
+        public Burger GetClassicBurger()
+        {
+            return new Base().
+                AddCheese(Ingredients.Cheese.CheeseType.Tilsitter).
+                OfWeight(200).
+                AddHam(Ingredients.Ham.HamType.Pancetta).
+                OfWeight(300).
+                AddSouce(Ingredients.Souce.SouceType.Hollandeise).
+                AddOther(200, 0, "Wrapping").
+                ToBurger();
+        }
+```
 
 ## Tips for training
 
