@@ -58,6 +58,7 @@ Code below shows you, how a burger can be wrapped and the price is increased by 
                 ToBurger();
         }
 ```
+For adding abitrary stuff to a food product, the general ingrediant type Other was introduced (the name ingrediant is somehow misleading now ...). As beeing a decorator it fits perfectly to the existing design and will also support upcoming bill feature.
 
 ## Tips for training
 
