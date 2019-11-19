@@ -5,7 +5,7 @@ This repository contains a training project for dealing with viscosity in design
 
 ## The background story
 
-Like in any other software project, a small backgroundstory of involved developers can be related. 
+Like in any other software project, a small backgroundstory of involved developers is related. 
 
 ### The first (basic) version
 
