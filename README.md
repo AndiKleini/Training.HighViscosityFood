@@ -11,6 +11,8 @@ Like in any other software project, a small backgroundstory of involved develope
 
 Once upon a time Clare, who is a very experienced software developer, was hired to create a system for some food corner. The business was young and the budget was low. Consequently Clare developed some basic features into the system to enable the business and make selling food possible. This initial, basic version can be checked out on master branch. Customers were lucky and started their business.
 
+Here you can see how intuitive the code looks by assembling some food product:
+
 ```C#
         public Burger GetClassicBurger()
         {
@@ -25,6 +27,73 @@ Once upon a time Clare, who is a very experienced software developer, was hired 
 ```
 
 By designing the solution, Clare had in mind the next feature of generating a printed out bill. This leads to application of decorator pattern and abstraction to FoodIngrediantsBase (IFoodProduct). But Clare had no chance, to talk to anyone else about it.
+
+For example cheese ingrediant is implemented as decorator item:
+
+```C#
+    internal class Cheese : WeightedIngrediants
+    {
+        private CheeseType cheeseType;
+        private int weight;
+        public Cheese(
+            IFoodProduct decoratedInstance,
+            int weight,
+            CheeseType cheeseType) : 
+            base(decoratedInstance, weight)
+        {
+            this.cheeseType = cheeseType;
+            this.weight = weight;
+        }
+        internal override int GetMyOwnCalories()
+        {
+            return base.GetCaloriesForWeight(this.GetCaloriesOfHundredGrammForCheeseType(this.cheeseType));
+        }
+        internal override int GetMyOwnPrice()
+        {
+            return base.GetPriceForWeight(this.GetPriceForHundredGrammForCheeseType(this.cheeseType));
+        }
+        private int GetCaloriesOfHundredGrammForCheeseType(
+            CheeseType typeOfCheese)
+        {
+            int calories = 0;
+            switch (typeOfCheese)
+            {
+                case CheeseType.Tilsitter:
+                    calories = 70;
+                    break;
+                case CheeseType.CottageCheese:
+                    calories = 87;
+                    break;
+                case CheeseType.Edamer:
+                    calories = 110;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(typeOfCheese));
+            }
+            return calories;
+        }
+        private int GetPriceForHundredGrammForCheeseType(
+            CheeseType typeOfCheese)
+        {
+            int price = 0;
+            switch (typeOfCheese)
+            {
+                case CheeseType.Tilsitter:
+                    price = 50;
+                    break;
+                case CheeseType.CottageCheese:
+                    price = 10;
+                    break;
+                case CheeseType.Edamer:
+                    price = 60;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(typeOfCheese));
+            }
+            return price;
+        }
+    }
+```
 
 ### Eddies changes 
 
