@@ -15,12 +15,12 @@ By designing the solution, Clare had in mind the next feature of generating a pr
 
 ### Eddies changes 
 
-After some weeks it figured out that more and more customers preferred taking away the food instead of eating it in the food corner. This implies the need of wrapping the food. Stackholders decide to let their customers pay for it, which resulted in a new feature:
+After some weeks it figured out that more and more customers prefered taking away the food instead of eating it in the food corner. This implies the need of wrapping the meal. Stackholders decide to let their customers pay for it, which resulted in a new feature:
 Wrap the food and let the customers pay a fixed price of 200 for it.
 
-Unfortunetly Clare was on holiday and her workmate Eddy was asked to develop the feature. Eddie is also very experienced and he quickly found a solution for it. Eddies extensions were fine and also very simple and easy to understand. Nonetheless he violated, without really wanting to do so, Clares design. 
+Unfortunetly Clare was on holiday and her workmate Eddy was asked to develop the feature. Eddie is also very experienced and he quickly found a solution for it. Eddies extensions were fine and also very simple and easy to understand. Nonetheless he violated, without really wanting it, Clares design. Befor you judge Eddy, please by aware that he has no idea about Clares plans regarding the bill.
 
-You can go through Eddies changes in branch SellOptionalWrapping_ByEddy. These are very concise and intuitive.
+You can go through Eddies concise and intuitive changes in branch SellOptionalWrapping_ByEddy.
 
 ### Clare returns from holiday
 
