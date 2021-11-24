@@ -210,6 +210,9 @@ For adding abitrary stuff to a food product, the general ingrediant type Other w
         }
     }
 ```
+## Takeaway (learnings)
+
+It is curcial taking away from this session the fact that the Other implementation was added too late. If it had been in place from the very beginning, the (dirty) fix wouldn't have been necessary. Therefore by introducing such design patterns one has always prepare for change and guarantee "Easy things must be easy and difficult ones possible".
 
 ## Tips for training
 
